@@ -96,10 +96,12 @@ int8_t platform_calib_write(struct touchscreen_calibration *calib)
 int8_t platform_calib_read(struct touchscreen_calibration *calib)
 {
     FILE *h1;
+    size_t res;
 
     if ((h1 = fopen(config_file, "r")) != NULL)
     {
-        fread(calib, sizeof(struct touchscreen_calibration), 1, h1);
+        res = fread(calib, sizeof(struct touchscreen_calibration), 1, h1);
+        (void)res;
         fclose(h1); 
 		return 0;
     }

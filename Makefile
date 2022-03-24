@@ -1,7 +1,7 @@
 PLATFORM?=RASPBERRYPI
 
 CC = gcc
-CFLAGS = -c -Wall -g -Os -Ilib/eve/include -Iexample
+CFLAGS = -c -Wall -g -Os -DPLATFORM_RASPBERRYPI -DUSE_LINUX_SPI_DEV -Ilib/eve/include -Iexample
 LD = $(CC)
 LDFLAGS = 
 
